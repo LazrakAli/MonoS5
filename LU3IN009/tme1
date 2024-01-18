@@ -1,0 +1,42 @@
+Exercice 1:
+1)
+a)
+select g.NUJOUEUR,g.LieuTournoi,g.annee
+from Gain g
+where lower(g.sponsor)='peugeot' and g.annee between '1990' and '1994';
+
+b)
+
+select j.nom,j.annaiss
+from joueur j, gain g
+where j.nujoueur=g.nujoueur and g.annee='1994' and lower(g.lieuTournoi)='roland garros';
+
+c)
+select j.nom,j.nationalite
+from joueur j,gain g 
+where j.nuJoueur=g.nuJoueur and g.annee='1992' and lower(g.lieuTournoi)='wimbledon' and exists 
+(select * from gain g1 where g1.nuJoueur=g.nuJoueur and g.annee=g1.annee and lower(g1.LieuTournoi)='roland garros');
+
+d) 
+select distinct j.nom,j.nationalite
+from joueur j,Rencontre r,gain g
+where j.nuJoueur=g.nuJoueur and g.Nujoueur=r.Nugagnant and lower(g.NomSponsor)='peugeot';
+
+e)
+
+select distinct j.nom
+from joueur j
+where  1000000 <= all (select g1.prime from gain g1 where j.NuJoueur=g1.nuJoueur and lower(g1.LieuTournoi)='roland garros');
+;
+
+f)
+
+select distinct j.NuJoueur
+from joueur j
+where  not exists(select * from rencontre r where j.Nujoueur=r.Nuperdant and r.lieutournoi='Rolland Garros');
+;
+
+g)
+
+
+h)

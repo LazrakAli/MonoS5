@@ -1,0 +1,22 @@
+a. Quels sont les joueurs (nom, prénom) sponsorisés par Adadis
+
+r = π NJo ( σ NSp ='Adadis' (Sponsorise) )
+r
+
+b. Quelles équipes ont déjà joué au stade préféré de l’équipe des Piépla ?
+
+r = π Eq1 ( (Match) ⨝ St=StP ( σ NEq='Piepla' (Equipe) ) ) 
+r
+
+
+
+c. Quels sont les stades où a déjà joué Manon Messi ?
+r = π St ( (Match) ⨝ Eq1=Eq ( σ NJo = 'Manon Messi' (Joueur) ) )
+r
+
+d. A quelle date a eu lieu un match entre deux équipes sponsorisées par le même sponsor?
+???
+
+
+e. Quel sponsor a financé deux joueurs différents ayant eu un match
+le même jour et dans des stades différents mais proches (moins de 50 km) 
